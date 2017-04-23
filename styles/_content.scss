@@ -1,0 +1,228 @@
+.content {
+	@include flex;
+	@include shadow;
+	width: 712px;
+	margin-left: 6px;
+	margin-top: 12px;
+	background: $siteColor;
+	padding-bottom: 5px;	
+
+	@include adaptive(tablet) {
+		width: 100%;
+		margin: 0;
+		@include shadow-none;
+	}
+
+	@include adaptive(smart) {
+		width: 100%;
+		margin: 0;
+		@include shadow-none;
+	}
+
+	@include adaptive(pc) {
+		width: 68%;
+		margin: 0% 1% 0 1%;
+	}
+}
+
+.content_none {
+    display: none;
+}
+
+.content__conteiner {
+	@include size;
+	margin-top: 5px;
+	padding: 10px;
+	border: 5px solid grey;
+	border-radius: 10px;
+	background: white;
+	font-size: 20px;
+	display: flex;
+	justify-content: flex-start;
+	flex-flow: column wrap;
+	align-items: flex-start;
+
+	@include adaptive(smart) {
+		height: auto;
+	}
+
+	@include adaptive(tablet) {
+		height: auto;
+	}
+}
+
+.content__conteiner_red {
+    border-color: red;
+}
+
+.content__conteiner_green {
+    border-color: green;
+}
+
+.content__conteiner_blue {
+    border-color: blue;
+}
+
+.content__conteiner_none{
+    display: none;
+}
+
+.content__date {
+	font-size: $font * 1.5;
+	display: flex;
+
+	align-items: center;
+	color: black;
+	margin-top: 10px;
+    margin-left: 45px;
+
+    &::before {
+        content: "";  
+        width: 30px;
+        height: 30px;  
+        background-image: url(../images/calendar.png);
+        position: absolute;
+        background-size: cover;
+        background-position: center center;
+        margin-left: -35px;
+	}
+}
+
+.content__school {
+	font-size: $font * 1.5;
+	display: flex;
+	align-items: center;
+	padding: 5px;
+	border-radius: 5px;
+	color: black;
+	border: 3px solid red;
+	margin-left: 10px;
+    margin-top: 10px;
+}
+
+.content__school_green {
+    border-color: green;
+}
+.content__school_blue {
+    border-color: blue;
+}
+
+.content__lection {
+	font-size: $font * 1.5;
+	display: flex;
+	align-items: center;
+	color: black;
+	margin-left: 45px;
+    margin-top: 10px;
+
+    &::before {
+        content: "";  
+        width: 30px;
+        height: 30px;  
+        background-image: url(../images/lection.png);
+        position: absolute;
+        background-size: cover;
+        background-position: center center;
+        margin-left: -35px;
+    }
+}
+
+.content__lector {
+	height: 50px;
+	font-size: $font * 1.5;
+	display: flex;
+	align-items: center;
+	padding-left: 5px;
+	color: black;
+	margin-left: 45px;
+    margin-top: 10px;
+	cursor: pointer;
+    @include shadow-button;
+
+	&::before {
+        content: "";  
+        width: 30px;
+        height: 30px;  
+        background-image: url(../images/lecturer.png);
+        position: absolute;
+        background-size: cover;
+        background-position: center center;
+        margin-left: -40px;
+	}
+
+	&::after {
+        content: "";  
+        width: 30px;
+        height: 30px; 
+        background-image: url(../images/free-dots.png);
+        position: relative;
+        background-size: cover;
+        margin-left: 10px;
+        background-position: center center;
+	}
+
+}
+
+.content__infoButton {
+	font-size: $font * 1.5;
+	display: none;
+	padding-bottom: 10px;
+	border-bottom: 1px solid lightgrey;
+	display: none;
+	margin-left: 10px;
+    margin-top: 10px;
+    margin-left: 45px;
+}
+
+.content__infoButton_show {
+	display: flex;
+}
+
+.content__videoLink {
+	font-size: $font * 1.5;
+	color: black;
+	padding: 5px;
+	text-decoration: none;
+	margin-left: 40px;
+	@include shadow-button;
+
+	&::before {
+    content: "";  
+    width: 30px;
+    height: 30px;  
+    background-image: url(../images/video.jpg);
+    position: absolute;
+    background-size: cover;
+    background-position: center center;
+    margin-left: -45px;
+	}
+
+	&::selection {
+		background: transparent;
+	};
+
+	&:hover {
+	color: darken(white, 20%);
+	};	
+
+}
+
+.content__lector_hidden {
+    display: none;
+}
+
+.content__video {
+	font-size: $font * 1.5;
+	align-items: center;
+	color: black;
+	margin-left: 10px;
+    margin-top: 10px;
+}
+
+.content__video_show {
+	display: flex;
+}
+
+.content__video_hidden {
+    display: none;
+}

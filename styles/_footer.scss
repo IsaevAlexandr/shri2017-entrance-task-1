@@ -1,0 +1,70 @@
+footer {
+	background: $siteColor;
+	width: 1024px;
+	margin-top: 12px;		
+	@include shadow;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-flow: row wrap;
+	height: 100px;
+	
+
+	@include adaptive(tablet) {
+		width: 100%;
+		margin: 0;
+		@include shadow-none;
+		justify-content: space-around;
+		height: 100px;
+	}
+
+	@include adaptive(smart) {
+		width: 100%;
+		margin: 0;
+		@include shadow-none;
+		justify-content: space-around;
+		padding-bottom: 15px;
+		height: auto;
+
+	}
+
+	@include adaptive(pc) {
+		@include size;
+		justify-content: space-around;
+	}		
+
+}
+
+.footer__menu {
+	display: flex;
+	justify-content: space-around;
+	flex-flow: row wrap;
+	align-items: center;
+	@include adaptive(smart) {
+		flex-direction: column;	
+	}
+}
+
+.footer__menu-element {
+
+	@include adaptive(smart) {
+		margin-top: 20px;
+	}
+}
+
+.footer__menu-link {
+	font-size: 16px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-left: 20px;
+	color: white;
+	text-decoration: none;
+
+	&::selection {
+		background: transparent;
+	};
+
+	&:hover {
+	color: darken(white, 20%);
+	};
+}

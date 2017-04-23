@@ -1,0 +1,131 @@
+header {
+	background: $siteColor;
+	width: 1024px;
+	margin-top: 12px;		
+	@include shadow;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-flow: row wrap;
+	height: 100px;
+
+	@include adaptive(tablet) {
+		width: 100%;
+		margin: 0;
+		flex-direction: column;
+		@include shadow-none;
+		justify-content: space-around;
+		height: 150px;
+	}
+
+	@include adaptive(smart) {
+		width: 100%;
+		margin: 0;
+		@include shadow-none;
+		justify-content: space-around;
+		height: auto;
+		padding-bottom: 15px;	
+	}
+
+	@include adaptive(pc) {
+		@include size;
+		justify-content: space-around;
+		margin-top: 6px;
+		margin-bottom: 6px;
+	}		
+
+}
+
+.header__logo {
+	font-size: 46px;
+	color: white;
+	letter-spacing: 2px;
+}
+
+.red {
+	color: red;
+	font-size: 48px;
+}
+
+.header__menu {
+	display: flex;
+	justify-content: space-around;
+	flex-flow: row wrap;
+	align-items: center;
+
+	@include adaptive(smart) {
+		flex-direction: column;	
+	}
+}
+
+.header__menu-element {
+	@include adaptive(smart) {
+		margin-top: 20px;
+	}
+}
+
+.header__menu-link {
+	font-size: 16px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	margin-left: 20px;
+	color: white;
+	text-decoration: none;
+
+	&::selection {
+		background: transparent;
+	};
+
+	&:hover {
+	color: darken(white, 20%);
+	};
+}
+
+.header__button-container {
+	justify-content: center;
+	align-items: center;
+	flex-flow: row wrap;
+	display: none;
+
+	@include adaptive(tablet) {
+		display: flex;
+		background: $siteColor;
+		width: 100%;
+		margin: 0;
+	}
+
+	@include adaptive(smart) {
+		display: flex;
+		width: 100%;
+		margin: 0;
+		background: $siteColor;
+	}
+
+}
+
+.header__button {
+	width: 98%;
+	height: 80px;
+	background: linear-gradient(white, lightgray);
+	border-radius: 10px;
+	border: 2px solid gray;
+	margin: 4px;
+	font-size: 50px;
+	line-height: 80px;
+	text-align: center;
+	cursor: pointer;
+
+	&::selection {
+		background: transparent;
+	};
+	
+	display: none;
+
+	@include adaptive(tablet) {
+		display: block;
+	}
+
+	@include adaptive(smart) {
+		display: block;
+	}
+}

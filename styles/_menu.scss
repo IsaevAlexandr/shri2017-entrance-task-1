@@ -1,0 +1,69 @@
+.menu {
+	width: 300px;
+	margin-right: 6px;
+	margin-top: 12px;
+	background: $siteColor;
+	@include shadow;
+
+	@include adaptive(tablet) {
+		display: none;
+	}
+
+	@include adaptive(smart) {
+		display: none;
+	}
+
+	@include adaptive(pc) {
+		width: 29%;
+		margin: 0% 0 0 1%;
+	}
+}
+
+.menu_show {
+	@include adaptive(tablet) {
+		display: block;
+		width: 100%;
+		margin: 0;
+		@include shadow-none;
+	}
+
+	@include adaptive(smart) {
+		display: block;
+		width: 100%;
+		margin: 0;
+		@include shadow-none;
+	}
+}
+
+.menu__form {
+	@include size;
+	@include flex;
+	background: white;
+	border-radius: 5px;
+}
+
+input, select {
+	font-family: 'Roboto Condensed', sans-serif;
+	letter-spacing: 1px;
+	font-size: $font * 1.2;
+	width: 98%;
+	height: 50px;
+	display: block;
+	border: 1px solid black;
+	margin: 1%;
+	border-radius: 5px;
+}
+
+.menu__button{
+	background: linear-gradient(lightgray, white);
+	cursor: pointer;
+
+	&:hover {
+	background: darken(white, 20%);
+	};
+}
+
+.menu__form-text {
+	font-size: $font * 1.5;
+	margin: 1%;
+}

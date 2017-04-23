@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>sri_2017-task-1</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="scripts/moment.min.js"></script>
+    <script src="scripts/code.min.js"></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="images/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="images/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="images/favicons/manifest.json">
+    <link rel="mask-icon" href="images/favicons/safari-pinned-tab.svg" color="#bf9ea4">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+    <div class="wr">
+        <div class="wrapper">
+            <header>
+                <div class="header__logo"><span class="red">М</span>обилизция</div>
+                <div class="header__menu">
+                    <div class="header__menu-element">
+                        <a href="#" class="header__menu-link">Компания</a></div>
+                    <div class="header__menu-element">
+                        <a href="#" class="header__menu-link">Блог</a></div>
+                    <div class="header__menu-element">
+                        <a href="#" class="header__menu-link">Вакансии</a></div>
+                    <div class="header__menu-element">
+                        <a href="#" class="header__menu-link">Обучение</a></div>
+                </div>
+            </header>
+            <div class="header__button-container">
+                    <div class="header__button" onclick="toggleClass();">&#9776;</div>
+            </div>
+            <div class="menu">
+                    <div class="menu__form-text">Выбор школы:</div>
+                    
+                    <select name="school">
+                        <option selected>Все школы</option>
+                        <option>Школа разработки интерфейсов</option>
+                        <option>Школа мобильной разработки</option>
+                        <option>Школа мобильного дизайна</option>
+                    </select>
+                    
+                    <div class="menu__form-text">Лектор:</div>
+
+                    <select name="lector">
+                        <option selected>Все лекторы</option>
+                        <option>Дмитрий Душкин</option>
+                        <option>Максим Васильев</option>
+                        <option>Сергей Бережной</option>
+                        <option>Андрей Морозов</option>
+                        <option>Иван Карев</option>
+                        <option>Прокопюк Андрей</option>
+                        <option>Эдуард Мацуков</option>
+                        <option>Дмитрий Складнов</option>
+                        <option>Роман Григорьев</option>
+                        <option>Алексей Щербинин</option>
+                        <option>Алексей Макаров</option>
+                        <option>Владимир Тагаков</option>
+                        <option>Максим Хромцов</option>
+                        <option>Денис Загаевский</option>
+                        <option>Дмитрий Попов</option>
+                        <option>Илья Сергеев</option>
+                        <option>Антон Тен</option>
+                        <option>Николай Васюнин</option>
+                        <option>Сергей Калабин</option>
+                        <option>Сергей Томилов</option>
+                        <option>Rijshouwer Krijn</option>
+                        <option>Андрей Гевак</option>
+                        <option>Александр Кондратьев</option>
+                        <option>Юрий Подорожный</option>
+                        <option>Дмитрий Моруз</option>
+                    </select>
+
+                    <div class="menu__form-text">Дата проведения лекций:</div>
+                    
+                    <div class="menu__form-text">От:</div>
+                    
+                    <input type="date" name="minDate" min="2016-10-17" max="2016-12-15" value="2016-10-17">
+                    
+                    <div class="menu__form-text">До:</div>
+                    
+                    <input type="date" name="maxDate" min="2016-10-17" max="2016-12-15" value="2016-12-15">
+                    
+                    <input type="submit" class="menu__button" value="Применить параметры!" onclick="go()">
+            </div>
+            <div class="content">
+                <div class="content__conteiner">
+                    <div class="content__date">18.10.16</div>
+                    <div class="content__school content__school_blue">Школа мобильного дизайна</div>
+                    <div class="content__lection">Лекция 1. Идея, исследование, концепт (Часть 1)</div>
+                    <div class="content__lector" onclick="toggle(this)">Антон Тен</div>
+                    <div class="content__infoButton"></div>
+                    <div class="content__video content__video_show"><a href="#" class="content__videoLink">Видео</a></div>
+                </div>
+                
+                <div class="content__conteiner">
+                    <div class="content__date">18.10.16</div>
+                    <div class="content__school content__school_blue">Школа мобильного дизайна</div>
+                    <div class="content__lection">Лекция 2. Идея, исследование, концепт (Часть 2)</div>
+                    <div class="content__lector" onclick="toggle(this)">Антон Тен</div>
+                    <div class="content__infoButton"></div>
+                    <div class="content__video content__video_show"><a href="#" class="content__videoLink">Видео</a></div>
+                </div>
+
+                <div class="content__conteiner">
+                    <div class="content__date">19.10.16</div>
+                    <div class="content__school content__school_green">Школа мобильной разработки</div>
+                    <div class="content__lection">Лекция 1. Java Blitz (Часть 1)</div>
+                    <div class="content__lector" onclick="toggle(this)">Эдуард Мацуков</div>
+                    <div class="content__infoButton"></div>
+                    <div class="content__video content__video_show"><a href="#" class="content__videoLink">Видео</a></div>
+                </div>
+
+                <div class="content__conteiner">
+                    <div class="content__date">19.10.16</div>
+                    <div class="content__school content__school_green">Школа мобильной разработки</div>
+                    <div class="content__lection">Лекция 2. Git & Workflow</div>
+                    <div class="content__lector" onclick="toggle(this)">Дмитрий Складнов</div>
+                    <div class="content__infoButton"></div>
+                    <div class="content__video content__video_show"><a href="#" class="content__videoLink">Видео</a></div>
+                </div>
+
+                <div class="content__conteiner">
+                    <div class="content__date">20.10.16</div>
+                    <div class="content__school">Школа разработки интерфейсов</div>
+                    <div class="content__lection">Лекция 1. Адаптивная вёрстка</div>
+                    <div class="content__lector" onclick="toggle(this)">Дмитрий Душкин</div>
+                    <div class="content__infoButton"></div>
+                    <div class="content__video content__video_show"><a href="#" class="content__videoLink">Видео</a></div>
+                </div>
+                
+                <div class="content__conteiner content__conteiner_blue">
+                    <div class="content__date">25.10.16</div>
+                    <div class="content__school content__school_blue">Школа мобильного дизайна</div>
+                    <div class="content__lection">Лекция 3. Особенности проектирования мобильных интерфейсов</div>
+                    <div class="content__lector" onclick="toggle(this)">Николай Васюнин</div>
+                    <div class="content__infoButton"></div>
+                    <div class="content__video content__video_hidden"><a href="#" class="content__videoLink">Видео</a></div>
+                </div>
+
+                <div class="content__conteiner content__conteiner_green">
+                    <div class="content__date">25.10.16</div>
+                    <div class="content__school content__school_green">Школа мобильной разработки</div>
+                    <div class="content__lection">Лекция 3. Java Blitz (Часть 2)</div>
+                    <div class="content__lector" onclick="toggle(this)">Эдуард Мацуков</div>
+                    <div class="content__infoButton"></div>
+                    <div class="content__video content__video_hidden"><a href="#" class="content__videoLink">Видео</a></div>
+                </div>
+                
+                <div class="content__conteiner content__conteiner_green">
+                    <div class="content__date">25.10.16</div>
+                    <div class="content__school content__school_green">Школа мобильной разработки</div>
+                    <div class="content__lection">MyFirstApp (Часть 1)</div>
+                    <div class="content__lector" onclick="toggle(this)">Роман Григорьев</div>
+                    <div class="content__infoButton"></div>
+                    <div class="content__video content__video_hidden"><a href="#" class="content__videoLink">Видео</a></div>
+                </div>
+
+                <div class="content__conteiner content__conteiner_red">
+                    <div class="content__date">27.10.16</div>
+                    <div class="content__school">Школа разработки интерфейсов</div>
+                    <div class="content__lection">Лекция 2. Работа с сенсорным пользовательским вводом</div>
+                    <div class="content__lector" onclick="toggle(this)">Дмитрий Душкин</div>
+                    <div class="content__infoButton"></div>
+                    <div class="content__video content__video_hidden"><a href="#" class="content__videoLink">Видео</a></div>
+                </div>
+
+                <div class="content__conteiner content__conteiner_blue">
+                    <div class="content__date">01.11.16</div>
+                    <div class="content__school content__school_blue">Школа мобильного дизайна</div>
+                    <div class="content__lection">Лекция 4. Продукт и платформа</div>
+                    <div class="content__lector" onclick="toggle(this)">Сергей Калабин</div>
+                    <div class="content__infoButton"></div>
+                    <div class="content__video content__video_hidden"><a href="#" class="content__videoLink">Видео</a></div>
+                </div>
+                
+                <div class="content__conteiner content__conteiner_blue">
+                    <div class="content__date">01.11.16</div>
+                    <div class="content__school content__school_blue">Школа мобильного дизайна</div>
+                    <div class="content__lection">Лекция 5. Природа операционных систем</div>
+                    <div class="content__lector" onclick="toggle(this)">Николай Васюнин</div>
+                    <div class="content__infoButton"></div>
+                    <div class="content__video content__video_hidden"><a href="#" class="content__videoLink">Видео</a></div>
+                </div>
+
+                <div class="content__conteiner content__conteiner_green">
+                    <div class="content__date">02.11.16</div>
+                    <div class="content__school content__school_green">Школа мобильной разработки</div>
+                    <div class="content__lection">Лекция 5. MyFirstApp (Часть 2)</div>
+                    <div class="content__lector" onclick="toggle(this)">Роман Григорьев</div>
+                    <div class="content__infoButton"></div>
+                    <div class="content__video content__video_hidden"><a href="#" class="content__videoLink">Видео</a></div>
+                </div>
+
+                <div class="content__conteiner content__conteiner_green">
+                    <div class="content__date">02.11.16</div>
+                    <div class="content__school content__school_green">Школа мобильной разработки</div>
+                    <div class="content__lection">Лекция 6. ViewGroup</div>
+                    <div class="content__lector" onclick="toggle(this)">Алексей Щербинин</div>
+                    <div class="content__infoButton"></div>
+                    <div class="content__video content__video_hidden"><a href="#" class="content__videoLink">Видео</a></div>
+                </div>
+
+                <div class="content__conteiner content__conteiner_red">
+                    <div class="content__date">03.11.16</div>
+                    <div class="content__school">Школа разработки интерфейсов</div>
+                    <div class="content__lection">Лекция 3. Мультимедиа: возможности браузера</div>
+                    <div class="content__lector" onclick="toggle(this)">Максим Васильев</div>
+                    <div class="content__infoButton"></div>
+                    <div class="content__video content__video_hidden"><a href="#" class="content__videoLink">Видео</a></div>
+                </div>
+                
+                <div class="content__conteiner content__conteiner_blue">
+                    <div class="content__date">08.11.16</div>
+                    <div class="content__school content__school_blue">Школа мобильного дизайна</div>
+                    <div class="content__lection">Лекция 6. Прототипирование как процесс</div>
+                    <div class="content__lector" onclick="toggle(this)">Сергей Томилов</div>
+                    <div class="content__infoButton"></div>
+                    <div class="content__video content__video_hidden"><a href="#" class="content__videoLink">Видео</a></div>
+                </div>
+
+                <div class="content__conteiner content__conteiner_blue">
+                    <div class="content__date">08.11.16</div>
+                    <div class="content__school content__school_blue">Школа мобильного дизайна</div>
+                    <div class="content__lection">Лекция 7. Инструмент под задачи</div>
+                    <div class="content__lector" onclick="toggle(this)">Сергей Томилов</div>
+                    <div class="content__infoButton"></div>
+                    <div class="content__video content__video_hidden"><a href="#" class="content__videoLink">Видео</a></div>
+                </div>
+
+                <div class="content__conteiner content__conteiner_green">
+                    <div class="content__date">09.11.16</div>
+                    <div class="content__school content__school_green">Школа мобильной разработки</div>
+                    <div class="content__lection">Лекция 7. Background</div>
+                    <div class="content__lector" onclick="toggle(this)">Алексей Макаров</div>
+                    <div class="content__infoButton"></div>
+                    <div class="content__video content__video_hidden"><a href="#" class="content__videoLink">Видео</a></div>
+                </div>
+                
+                <div class="content__conteiner content__conteiner_green">
+                    <div class="content__date">09.11.16</div>
+                    <div class="content__school content__school_green">Школа мобильной разработки</div>
+                    <div class="content__lection">Лекция 8. RecyclerView</div>
+                    <div class="content__lector" onclick="toggle(this)">Владимир Тагаков</div>
+                    <div class="content__infoButton"></div>
+                    <div class="content__video content__video_hidden"><a href="#" class="content__videoLink">Видео</a></div>
+                </div>
+
+                <div class="content__conteiner content__conteiner_red">
+                    <div class="content__date">10.11.16</div>
+                    <div class="content__school">Школа разработки интерфейсов</div>
+                    <div class="content__lection">Лекция 4. Нативные приложения на веб-технологиях</div>
+                    <div class="content__lector" onclick="toggle(this)">Сергей Бережной</div>
+                    <div class="content__infoButton"></div>
+                    <div class="content__video content__video_hidden"><a href="#" class="content__videoLink">Видео</a></div>
+                </div>
+                
+                <div class="content__conteiner content__conteiner_blue">
+                    <div class="content__date">15.11.16</div>
+                    <div class="content__school content__school_blue">Школа мобильного дизайна</div>
+                    <div class="content__lection">Лекция 8. Анимации</div>
+                    <div class="content__lector" onclick="toggle(this)">Сергей Томилов</div>
+                    <div class="content__infoButton"></div>
+                    <div class="content__video content__video_hidden"><a href="#" class="content__videoLink">Видео</a></div>
+                </div>
+
+                <div class="content__conteiner content__conteiner_blue">
+                    <div class="content__date">15.11.16</div>
+                    <div class="content__school content__school_blue">Школа мобильного дизайна</div>
+                    <div class="content__lection">Дополнительная лекция. Design Everything</div>
+                    <div class="content__lector" onclick="toggle(this)">Rijshouwer Krijn</div>
+                    <div class="content__infoButton"></div>
+                    <div class="content__video content__video_hidden"><a href="#" class="content__videoLink">Видео</a></div>
+                </div>
+
+                <div class="content__conteiner content__conteiner_green">
+                    <div class="content__date">16.11.16</div>
+                    <div class="content__school content__school_green">Школа мобильной разработки</div>
+                    <div class="content__lection">Лекция 9. Service & Broadcasts</div>
+                    <div class="content__lector" onclick="toggle(this)">Алексей Макаров</div>
+                    <div class="content__infoButton"></div>
+                    <div class="content__video content__video_hidden"><a href="#" class="content__videoLink">Видео</a></div>
+                </div>
+                
+                <div class="content__conteiner content__conteiner_green">
+                    <div class="content__date">16.11.16</div>
+                    <div class="content__school content__school_green">Школа мобильной разработки</div>
+                    <div class="content__lection">Лекция 10. Drawing</div>
+                    <div class="content__lector" onclick="toggle(this)">Алексей Щербинин</div>
+                    <div class="content__infoButton"></div>
+                    <div class="content__video content__video_hidden"><a href="#" class="content__videoLink">Видео</a></div>
+                </div>
+
+                <div class="content__conteiner content__conteiner_red">
+                    <div class="content__date">17.11.16</div>
+                    <div class="content__school">Школа разработки интерфейсов</div>
+                    <div class="content__lection">Лекция 5. Клиентская оптимизация: базовые знания и лучшие практики</div>
+                    <div class="content__lector" onclick="toggle(this)">Андрей Морозов</div>
+                    <div class="content__infoButton"></div>
+                    <div class="content__video content__video_hidden"><a href="#" class="content__videoLink">Видео</a></div>
+                </div>
+                
+                <div class="content__conteiner content__conteiner_blue">
+                    <div class="content__date">22.11.16</div>
+                    <div class="content__school content__school_blue">Школа мобильного дизайна</div>
+                    <div class="content__lection">Лекция 9. Развите продукта</div>
+                    <div class="content__lector" onclick="toggle(this)">Андрей Гевак</div>
+                    <div class="content__infoButton"></div>
+                    <div class="content__video content__video_hidden"><a href="#" class="content__videoLink">Видео</a></div>
+                </div>
+
+                <div class="content__conteiner content__conteiner_green">
+                    <div class="content__date">23.11.16</div>
+                    <div class="content__school content__school_green">Школа мобильной разработки</div>
+                    <div class="content__lection">Лекция 11. Content provider</div>
+                    <div class="content__lector" onclick="toggle(this)">Максим Хромцов</div>
+                    <div class="content__infoButton"></div>
+                    <div class="content__video content__video_hidden"><a href="#" class="content__videoLink">Видео</a></div>
+                </div>
+
+                <div class="content__conteiner content__conteiner_green">
+                    <div class="content__date">23.11.16</div>
+                    <div class="content__school content__school_green">Школа мобильной разработки</div>
+                    <div class="content__lection">Лекция 12. SQL&SQLite</div>
+                    <div class="content__lector" onclick="toggle(this)">Максим Хромцов</div>
+                    <div class="content__infoButton"></div>
+                    <div class="content__video content__video_hidden"><a href="#" class="content__videoLink">Видео</a></div>
+                </div>
+
+                <div class="content__conteiner content__conteiner_red">
+                    <div class="content__date">24.11.16</div>
+                    <div class="content__school">Школа разработки интерфейсов</div>
+                    <div class="content__lection">Лекция 6. Клиентская оптимизация: мобильные устройства и инструменты</div>
+                    <div class="content__lector" onclick="toggle(this)">Иван Карев</div>
+                    <div class="content__infoButton"></div>
+                    <div class="content__video content__video_hidden"><a href="#" class="content__videoLink">Видео</a></div>
+                </div>
+
+                <div class="content__conteiner content__conteiner_blue">
+                    <div class="content__date">29.11.16</div>
+                    <div class="content__school content__school_blue">Школа мобильного дизайна</div>
+                    <div class="content__lection">Лекция 10. Исследование интерфейсов</div>
+                    <div class="content__lector" onclick="toggle(this)">Александр Кондратьев</div>
+                    <div class="content__infoButton"></div>
+                    <div class="content__video content__video_hidden"><a href="#" class="content__videoLink">Видео</a></div>
+                </div>
+
+                <div class="content__conteiner content__conteiner_green">
+                    <div class="content__date">30.11.16</div>
+                    <div class="content__school content__school_green">Школа мобильной разработки</div>
+                    <div class="content__lection">Лекция 13. Fragments (Часть 1)</div>
+                    <div class="content__lector" onclick="toggle(this)">Денис Загаевский</div>
+                    <div class="content__infoButton"></div>
+                    <div class="content__video content__video_hidden"><a href="#" class="content__videoLink">Видео</a></div>
+                </div>
+
+                <div class="content__conteiner content__conteiner_green">
+                    <div class="content__date">30.11.16</div>
+                    <div class="content__school content__school_green">Школа мобильной разработки</div>
+                    <div class="content__lection">Лекция 14. Fragments (Часть 2)</div>
+                    <div class="content__lector" onclick="toggle(this)">Денис Загаевский</div>
+                    <div class="content__infoButton"></div>
+                    <div class="content__video content__video_hidden"><a href="#" class="content__videoLink">Видео</a></div>
+                </div>
+
+                <div class="content__conteiner content__conteiner_red">
+                    <div class="content__date">01.12.16</div>
+                    <div class="content__school">Школа разработки интерфейсов</div>
+                    <div class="content__lection">Лекция 7. Инфраструктура веб-проектов</div>
+                    <div class="content__lector" onclick="toggle(this)">Прокопюк Андрей</div>
+                    <div class="content__infoButton"></div>
+                    <div class="content__video content__video_hidden"><a href="#" class="content__videoLink">Видео</a></div>
+                </div>
+
+                <div class="content__conteiner content__conteiner_red">
+                    <div class="content__date">01.12.16</div>
+                    <div class="content__school">Школа разработки интерфейсов</div>
+                    <div class="content__lection">Лекция 8. Инструменты разработки мобильного фронтенда</div>
+                    <div class="content__lector" onclick="toggle(this)">Прокопюк Андрей</div>
+                    <div class="content__infoButton"></div>
+                    <div class="content__video content__video_hidden"><a href="#" class="content__videoLink">Видео</a></div>
+                </div>
+
+                <div class="content__conteiner content__conteiner_blue">
+                    <div class="content__date">06.12.16</div>
+                    <div class="content__school content__school_blue">Школа мобильного дизайна</div>
+                    <div class="content__lection">Лекция 11. Работа в команде</div>
+                    <div class="content__lector" onclick="toggle(this)">Юрий Подорожный</div>
+                    <div class="content__infoButton"></div>
+                    <div class="content__video content__video_hidden"><a href="#" class="content__videoLink">Видео</a></div>
+                </div>   
+
+                <div class="content__conteiner content__conteiner_green">
+                    <div class="content__date">07.12.16</div>
+                    <div class="content__school content__school_green">Школа мобильной разработки</div>
+                    <div class="content__lection">Лекция 15. MVP&Co</div>
+                    <div class="content__lector" onclick="toggle(this)">Дмитрий Попов</div>
+                    <div class="content__infoButton"></div>
+                    <div class="content__video content__video_hidden"><a href="#" class="content__videoLink">Видео</a></div>
+                </div>
+
+                <div class="content__conteiner content__conteiner_blue">
+                    <div class="content__date">13.12.16</div>
+                    <div class="content__school content__school_blue">Школа мобильного дизайна</div>
+                    <div class="content__lection">Дополнительная лекция. Айдентика</div>
+                    <div class="content__lector" onclick="toggle(this)">Дмитрий Моруз</div>
+                    <div class="content__infoButton"></div>
+                    <div class="content__video content__video_hidden"><a href="#" class="content__videoLink">Видео</a></div>
+                </div>  
+
+                <div class="content__conteiner content__conteiner_green">
+                    <div class="content__date">14.12.16</div>
+                    <div class="content__school content__school_green">Школа мобильной разработки</div>
+                    <div class="content__lection">Лекция 16. Debugging & Polishing</div>
+                    <div class="content__lector" onclick="toggle(this)">Илья Сергеев</div>
+                    <div class="content__infoButton"></div>
+                    <div class="content__video content__video_hidden"><a href="#" class="content__videoLink">Видео</a></div>
+                </div>
+
+            </div>
+            <footer>
+                <div class="footer__menu">
+                    <div class="footer__menu-element">
+                        <a href="#" class="footer__menu-link">Информация</a></div>
+                    <div class="footer__menu-element">
+                        <a href="#" class="footer__menu-link">Обратная связь</a></div>
+                    <div class="footer__menu-element">
+                        <a href="#" class="footer__menu-link">Сми онас</a></div>
+                    <div class="footer__menu-element">
+                        <a href="http://www.yandex.ru" class="footer__menu-link">© 2017 ООО Яндекс</a></div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
